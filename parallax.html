@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Floating parralax</title>  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"></script>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            
+        
+        }
+
+            ul.topnav li {float: left;}
+
+            ul.topnav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            }
+
+            ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+            ul.topnav li a.active {background-color: #4CAF50;}
+
+            ul.topnav li.right {float: right;}
+
+            @media screen and (max-width: 600px) {
+            ul.topnav li.right, 
+            ul.topnav li {float: none;}
+            }
+        .caption{
+            width: 30%;
+        }
+        #first{
+            position: relative;
+            background: url('https://jisaysfashion.files.wordpress.com/2016/11/graymb1.jpg?w=1024') no-repeat fixed;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+        #second{
+            position: relative;
+        }
+        .title-text{
+            position: absolute;
+            font-size: 50px;
+            font-family: 'Merienda', cursive;
+        }
+        
+        .title-text{
+            top: 700px;
+            right: 300px;
+        }
+        
+        #second{
+            background: url('https://worldinparis.com/wp-content/uploads/2018/08/Paris-Packing-List-Winter-Fall.jpg') 50% 0 no-repeat fixed;
+            height: 1200px;
+            overflow: hidden;
+        }
+       
+        .shoe{
+            background: url(third.png) 50% 0 no-repeat fixed;
+            height: 1300px;
+        }
+        :root {
+  /*initialize variables as will be used on the left side, standard state*/
+  --bg-color: rgba(255,255,255, 0.7);
+  --bg-url: url('https://image.ibb.co/m56Czw/designer.jpg');
+  --button-hover-color: rgba(161, 11, 11, 0.3);
+}
+.about{
+    height: 300px;
+}
+
+html, body {
+  padding:0;
+  margin:0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  white-space: nowrap;
+}
+
+button {
+  text-transform:uppercase;
+  padding:1em 2em;
+  font-size:1rem;
+  font-weight:bold;
+  background:transparent;
+  border: 0.2rem #FFF solid;
+}
+
+button:hover{
+  /*sets the hover status of the buttons to a variable value*/
+  background-color: var(--button-hover-color);
+  border-color: var(--button-hover-color); 
+  cursor:pointer;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow:hidden;
+}
+
+.split {
+  transition:all 1s ease;
+  flex:1 1 auto;
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items:center;
+  /*sets the background image and color mask, defaulted to the values corresponding to the left*/
+  background: 
+    linear-gradient(var(--bg-color),var(--bg-color)) repeat-x top / 100% 100%,
+    var(--bg-url) center center no-repeat / cover;
+}
+.left button{
+    color:black;
+    border: 0.2rem #000 solid;
+
+}
+.right button{
+    color:white;
+}
+
+
+.right {
+  /*ONLY CHANGE THE VARIABLE VALUES, and they'll apply to the correct children! :D*/
+  --bg-color: rgba(43, 43, 43, 0.8);
+  --bg-url:url('https://image.ibb.co/m3ZbRb/programmer.png');
+  --button-hover-color: rgba(92, 92, 92, 0.3);
+  color:#FFF; 
+  
+}
+
+.split:hover{
+  /*grows an element on hover*/
+  flex-grow:10;
+}
+
+
+@media(max-width:500px){
+  /*switch flex direction for smaller screens*/
+  .container{
+    flex-direction:column;   
+  }
+}
+
+
+
+/*TO-DO: adjust header sizes*/
+        footer{
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: bisque;
+        }
+
+        </style> 
+    </head>
+
+    <body>
+            <ul class="topnav">
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="right"><a href="#about">About</a></li>
+                  </ul>
+            <section id="first">
+                    <p> Shop upto Rs.3000 and avail exciting offers!</p>
+            </section>
+        
+        <section id="second">
+            <div class="shoe">
+            </div>
+            <h2 class="title-text">Have you not shopped yet??</h2>
+        </section>
+        <section class="about">
+            <div class="container">
+                <div class="split left">
+                  <h1>Our Mission</h1>
+                  
+                  <button>Read More</button>
+                </div>
+                <div class="split right">
+                  <h1>Our vission</h1>
+                  
+                  <button>Read More</button>
+                </div>
+              </div>  
+        </section>
+       
+        
+        <section class="fourth"> 
+            <div class="box">
+                <div class="card">
+                  <div class="imgBx">
+                      <img src="https://lp.stories.com/app005prod?set=source[02_0697416_001_001],type[PRODUCT],device[hdpi],quality[80],ImageVersion[2018082]&call=url[file:/product/main]" alt="images">
+                  </div>
+                  <div class="details">
+                      <h2>Knit Sweater<br><span>Rs. 1,799</span></h2>
+                  </div>
+                </div>
+              
+                 <div class="card">
+                   <div class="imgBx">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-AQ6TBlRo39zZzoLqTaCllPeb_1r0_iAdf4Mg2f3iFoabRX9Ixw&s" alt="images">
+                   </div>
+                   <div class="details">
+                      <h2>Beanie<br><span>Rs. 799</span></h2>
+                    </div>
+                 </div>
+          
+                 <div class="card">
+                   <div class="imgBx">
+                      <img src="https://www.brontebymoon.co.uk/wp-content/uploads/2017/04/TAR80-A01-Lambswool-Tartan-Scarf-Antique-Dress-Stewart.jpg" alt="images">
+                   </div>
+                   <div class="details">
+                      <h2>Scarf<br><span>Rs. 1,299</span></h2>
+                    </div>
+                 </div>
+           
+            </div>
+            <br>
+            <div class="box">
+                <div class="card">
+                  <div class="imgBx">
+                      <img src="https://www.helikon-tex.com/media/catalog/product/cache/4/image/500x/17f82f742ffe127f42dca9de82fb58b1/r/k/rk-rgw-le-30.jpg" alt="images">
+                  </div>
+                  <div class="details">
+                      <h2>Gloves<br><span>Rs. 399</span></h2>
+                  </div>
+                </div>
+              
+                 <div class="card">
+                   <div class="imgBx">
+                      <img src="https://www.comptoir-irlandais.com/14578-large_default/burlington-marylebone-women-s-socks.jpg" alt="images">
+                   </div>
+                   <div class="details">
+                      <h2>Socks<br><span>Rs. 499</span></h2>
+                    </div>
+                 </div>
+          
+                 <div class="card">
+                   <div class="imgBx">
+                      <img src="https://images-na.ssl-images-amazon.com/images/I/51lTa3ClVkL._UX679_.jpg" alt="images">
+                   </div>
+                   <div class="details">
+                      <h2>Overcoat jacket<br><span>Rs. 2,799</span></h2>
+                    </div>
+                 </div>
+           
+            </div>
+        </section>
+        <footer>Enjoy shopping</footer>
+        
+        <script>
+        $('#second').parallax("50%",0.1);
+        $('.shoe').parallax("50%",0.4);
+        </script>
+        
+    </body>
+</html>
